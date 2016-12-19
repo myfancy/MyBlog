@@ -1,0 +1,23 @@
+{
+  "name": "myblog",
+  "version": "1.0.0",
+  "description": "myblog for learn",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/myfancy/myblog.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/myfancy/myblog/issues"
+  },
+  "homepage": "https://github.com/myfancy/myblog#readme",
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-imagemin": "^3.1.1"
+  }
+}
