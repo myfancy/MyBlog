@@ -5,7 +5,7 @@ var gulp = require('gulp');
 var imagemin = require('gulp-imagemin');
 
 gulp.task('default', function(){
-    gulp.src('images_/*')
+    gulp.src('./dev/images/*')
         .pipe(imagemin())
         .pipe(gulp.dest('./images'))
 });
