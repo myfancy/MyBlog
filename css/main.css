@@ -1,0 +1,1250 @@
+@charset "utf-8";
+
+/* ==========================================================================
+   Component: 基础样式
+ ============================================================================ */
+html{
+    font-family: "microsoft yahei",Arial,sans-serif;
+    font-size: 10px;
+}
+body{
+    min-width: 320px;
+}
+body a{
+    -webkit-transition:background-color 0.5s;
+       -moz-transition:background-color 0.5s;
+        -ms-transition:background-color 0.5s;
+         -o-transition:background-color 0.5s;
+            transition:background-color 0.5s;
+}
+/*标准浏览器 公用的图片hover特效*/
+.w3c .hover-box {
+    display: block;
+    overflow: hidden;
+}
+.w3c .hover-box:hover .hover-animation {
+    -webkit-transform: scale(1.05);
+    -moz-transform: scale(1.05);
+    -o-transform: scale(1.05);
+    -ms-transform: scale(1.05);
+    transform: scale(1.05);
+    -webkit-transition: transform 1s ease;
+    -moz-transition: transform 1s ease;
+    -o-transition: transform 1s ease;
+    -ms-transition: transform 1s ease;
+    transition: transform 1s ease;
+}
+.w3c .hover-animation {
+    -webkit-transform: scale(1);
+    -moz-transform: scale(1);
+    -o-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+    -webkit-transition: transform 1s ease;
+    -moz-transition: transform 1s ease;
+    -o-transition: transform 1s ease;
+    -ms-transition: transform 1s ease;
+    transition: transform 1s ease;
+}
+/* ==========================================================================
+   Component: 网站顶栏
+ ============================================================================ */
+
+.topbar{
+    display: none;
+}
+@media (min-width: 768px) {
+    .topbar{
+        display: block;
+        width: 100%;
+        height: 30px;
+        background-color: #292C46;
+    }
+    .topbar .topbarLeft,
+    .topbar .topbarRight{
+        color: #dedede;
+        font-size: 1.4rem;
+        line-height: 30px;
+    }
+}
+
+/* ==========================================================================
+   Component: 网站主导航
+ ============================================================================ */
+.navbar{
+    border-radius: 0;
+    min-height: 50px;
+    margin-bottom: 0;
+    z-index: 16;/*大于幻灯，覆盖式下拉所需*/
+    height: 50px;
+    border: none;
+}
+.navbar-brand{
+    padding: 5px 0;
+    height: 50px;
+    margin-left: 15px;
+    width: 141px;
+}
+.navbar-brand img{
+    height: 100%;
+}
+.navbar-toggle {
+    margin: 8px 15px;
+}
+/*修改菜单 颜色 字体*/
+.navbar-default .navbar-nav>li>a{
+    color: #333;
+    font-family: "microsoft yahei",sans-serif;
+}
+.navbar-default .navbar-nav > .open > a,
+.navbar-default .navbar-nav > .open > a:hover,
+.navbar-default .navbar-nav > .open > a:focus {
+    color: #26AEDE;
+    background-color: #e7e7e7;
+}
+/*修改菜单 .hover颜色 小屏应用样式*/
+.navbar-default .navbar-nav>.hover>a,
+.navbar-default .navbar-nav>.hover>a:focus,
+.navbar-default .navbar-nav>.hover>a:hover {
+    color: #ffffff;
+    background-color: #26AEDE;
+
+    -webkit-transition:0s;
+    -moz-transition:0s;
+    -ms-transition:0s;
+    -o-transition:0s;
+    transition:0s;
+}
+/*子菜单*/
+.navbar-collapse{
+    background-color: #f8f8f8;
+}
+.dropdown-menu{background-color: #ffffff;}
+.dropdown-menu>li>a{
+    color: #333333;
+    font-family: "microsoft yahei", sans-serif;
+}
+.dropdown-menu>li>a:hover{color: #333333;}
+.dropdown-menu .divider {background-color: #e5e5e5;}
+
+.navbar-nav>li>a {
+    text-indent: 2em;
+}
+
+@media (min-width: 768px) {
+    .navbar{
+        border-radius: 0;
+        min-height: 50px;
+        height: auto;
+        border: 1px solid transparent;
+    }
+    .navbar-brand{
+        margin-left: 0;
+    }
+
+    .navbar-nav{
+        margin-left: 30px;
+    }
+    .navbar-nav>li>a {
+        text-indent: 0;
+        padding: 15px 3px;
+    }
+}
+
+@media (min-width: 992px) {
+    .navbar{
+        min-height: 65px;
+    }
+    .navbar-brand{
+        padding: 10px 0;
+        height: 65px;
+        width: 141px;
+    }
+    .navbar-nav{
+        margin-left: 80px;
+    }
+    .navbar-nav>li>a {
+        padding: 22.5px 10px;
+    }
+}
+
+@media (min-width: 1200px) {
+    .navbar{
+        min-height: 80px;
+    }
+    .navbar-brand{
+        padding: 15px 0;
+        height: 80px;
+        width: 176px;
+    }
+    .navbar-nav{
+        margin-left: 100px;
+    }
+    .navbar-nav>li>a {
+        padding: 30px 15px;
+    }
+}
+
+/* ==========================================================================
+   Component: 幻灯片
+ ============================================================================ */
+.carousel-caption{
+    bottom: 20%;
+}
+.carousel-caption h3{
+    font-size: 1em;
+    font-weight: bold;
+    text-align: left;
+    color: #ff9714;
+}
+.carousel-caption p{
+    font-size: 1.5em;
+    font-weight: bold;
+    text-align: left;
+    color: #ff9714;
+}
+@media (min-width: 768px) {
+    .carousel-caption{
+        left: 10%;
+        bottom: 25%;
+    }
+    .carousel-caption h3{
+        font-size: 2.6em;
+    }
+    .carousel-caption p{
+        font-size: 1.5em;
+    }
+}
+@media (min-width: 1200px) {
+    .carousel{
+        margin: auto;
+    }
+    .carousel-caption{
+        bottom: 30%;
+    }
+    .carousel-caption h3{
+        font-size: 3.5em;
+    }
+    .carousel-caption p{
+        font-size: 2em;
+    }
+}
+/*超大屏支持*/
+@media (min-width: 1900px) {
+    .carousel{
+        max-width: 1920px;
+        margin: auto;
+    }
+    .carousel-caption{
+        bottom: 30%;
+    }
+    .carousel-caption h3{
+        font-size: 4.5em;
+    }
+    .carousel-caption p{
+        font-size: 3em;
+    }
+}
+
+/* ==========================================================================
+   Component:网站首页 公共板块标题栏（走进鑫昊、产品分类、成功案例、最新资讯）
+ ============================================================================ */
+.titlebar{
+    width: 100%;
+    height: 50px;
+    text-align: center;
+    /*禁止选中图片*/
+    -webkit-user-select:none;
+    -moz-user-select:none;
+    -ms-user-select:none;
+    user-select:none;
+}
+.titlebar img{
+    height: 100%;
+    width: auto;
+    max-width: 100%;
+}
+@media (min-width: 768px) {
+    .titlebar{
+        height: 80px;
+        padding: 10px;
+    }
+}
+@media (min-width: 992px) {
+    .titlebar{
+        height: 90px;
+        padding: 15px;
+    }
+}
+@media (min-width: 1200px) {
+    .titlebar{
+        height: 100px;
+        padding: 20px;
+    }
+}
+
+/* ==========================================================================
+   Component:自定义五列栅格
+ ============================================================================ */
+.col-xs-2point4, .col-sm-2point4, .col-md-2point4, .col-lg-2point4{
+    position: relative;
+    min-height: 1px;
+    padding-right: 15px;
+    padding-left: 15px;
+}
+.col-xs-2point4 {
+    float: left;
+    width: 20%;
+}
+@media (min-width: 768px) {
+    .col-sm-2point4 {
+        float: left;
+        width: 20%;
+    }
+}
+@media (min-width: 992px){
+    .col-md-2point4 {
+        float: left;
+        width: 20%;
+    }
+}
+@media (min-width: 1200px){
+    .col-lg-2point4 {
+        float: left;
+        width: 20%;
+    }
+}
+/* ==========================================================================
+   Component:鑫昊首页 公共板块 xh-panel（走进鑫昊、产品分类、成功案例、最新资讯）
+ ============================================================================ */
+.xh-panel{
+    width: 100%;
+    text-align: center;
+    margin-bottom: 20px;
+}
+/* ==========================================================================
+   Component:鑫昊首页 >= 走进鑫昊
+ ============================================================================ */
+/*走进鑫昊 公司介绍*/
+.xh-info{
+    font-size: 1.4rem;
+    font-family: "microsoft yahei", Arial, sans-serif;
+    font-weight: 500;
+    line-height: 2rem;
+    color: #888888;
+    text-shadow: 1px 0 1px #eeeeee, 0 1px 1px #eeeeee,
+    0 -1px 1px #eeeeee, -1px 0 1px #eeeeee;
+    filter: Dropshadow(offx = 1, offy = 0, color = #eeeeee)
+    Dropshadow(offx = 0, offy = 1, color = #eeeeee)
+    Dropshadow(offx = 0, offy = -1, color = #eeeeee)
+    Dropshadow(offx = -1, offy = 0, color = #eeeeee);
+}
+/*走进鑫昊 5列导航*/
+.xh-guide {
+    margin: 10px auto;
+}
+.xh-guide a{
+    text-decoration: none;
+}
+.xh-guide img,
+.xh-guide span{
+    display: block;
+    margin: 0 auto;
+    padding: 1em;
+}
+.xh-guide a:hover span{
+    background-color: #2aabd2;
+    color: #ffffff;
+}
+@media (min-width: 1200px) {
+    .xh-guide{
+        margin: 20px auto;
+    }
+}
+/* ==========================================================================
+   Component:鑫昊首页 >= 产品分类
+ ============================================================================ */
+/*产品分类 菜单*/
+.xh-pd-menu{
+    background-color: #cccccc;
+}
+.nav-btmline > li {
+    float: left;
+}
+.nav-btmline > li > a {
+    border-radius: 0;
+    color: #333;
+    font-weight: 500;
+    text-decoration: none;
+    border-bottom: 3px solid #cccccc;
+}
+.nav-btmline > li > a:hover,
+.nav-btmline > li > a:focus {
+    text-decoration: none;
+    background-color: #eeeeee;
+    border-bottom: 3px solid #0054A4;
+}
+.nav-btmline > li + li {
+    margin-left: 2px;
+}
+.nav-btmline > li.active > a,
+.nav-btmline > li.active > a:hover,
+.nav-btmline > li.active > a:focus {
+    color: #0054A4;
+    background-color: #eeeeee;
+    border-bottom: 3px solid #0054A4;
+}
+/*产品展示 wrap*/
+.xh-pd-content{
+ padding: 2rem;
+}
+/*产品所在的行*/
+.xh-pd-content-row{
+
+}
+/*单个的产品卡片*/
+.xh-pd-card{
+
+}
+.xh-pd-card img{
+    width: 100%;
+    height: auto;
+}
+.xh-pd-card a{
+    display: block;
+    overflow: hidden;
+    text-decoration: none;
+    font-family: "microsoft yahei", Arial, sans-serif;
+    margin-bottom: 1rem;
+}
+.xh-pd-card a h3{
+    color: #333333;
+    font-size: 1.8rem;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    display:block;white-space:nowrap; overflow:hidden; text-overflow:ellipsis;
+}
+.xh-pd-card a p{
+    display: none;
+}
+.xh-pd-card a:hover{
+    background-color: #2aabd2;
+}
+.xh-pd-card a:hover h3,
+.xh-pd-card a:hover p{
+    color: #ffffff;
+}
+@media (min-width: 768px) {
+    .xh-pd-card a h3{
+        font-size: 1.8rem;
+        margin-top: 20px;
+        margin-bottom: 10px;
+    }
+    .xh-pd-card a p{
+        display: block;
+        color: #666666;
+        font-size: 1.4rem;
+        overflow: hidden;
+        line-height: 1.4em;
+        height: 2.8em;
+    }
+}
+
+/* ==========================================================================
+   Component:鑫昊首页 >= 成功案例
+ ============================================================================ */
+/*成功案例*/
+.xh-suc{
+    padding: 1rem;
+}
+/*成功案例 单个案例*/
+.xh-suc-case{
+
+}
+.xh-suc-case img{
+    width: 100%;
+    height: auto;
+}
+.xh-suc-case a{
+    text-decoration: none;
+}
+.xh-suc-case a div.xh-suc-case-txt{
+    position: relative;
+    display:block;
+    white-space:nowrap;
+    overflow:hidden;
+    text-overflow: ellipsis;
+    padding-right: 2.8rem;
+    margin-bottom: 1rem;
+    color: #333333;
+    font-size: 1.4rem;
+    font-family: "microsoft yahei", Arial, sans-serif;
+    line-height: 2.8rem;
+    font-weight: 500;
+    text-align: left;
+
+    -webkit-transition:all 0.5s;
+    -moz-transition:all 0.5s;
+    -ms-transition:all 0.5s;
+    -o-transition:all 0.5s;
+    transition:all 0.5s;
+}
+.xh-suc-case a:hover div.xh-suc-case-txt{
+    color: #FFFFFF;
+    text-indent: 1rem;
+    background-color: #0054A4;
+}
+
+/* “十” 图标 */
+.xh-suc-case .xh-suc-case-plus{
+    position: absolute;
+    top:0;
+    right: 0;
+    width: 2.8rem;
+    height: 2.8rem;
+    background-color: #0054A4;
+    color: #ffffff;
+    text-indent: 0;
+    text-align: center;
+    font-weight: 100;
+}
+/* “十” 字图标旋转动画 */
+.xh-suc-case a .xh-suc-case-plus span{
+    -webkit-transition: -webkit-transform 0.3s;
+    -moz-transition: -moz-transform 0.3s;
+    -ms-transition: -ms-transform 0.3s;
+    -o-transition: -o-transform 0.3s;
+    transition: transform 0.3s;
+}
+.xh-suc-case a:hover .xh-suc-case-plus span{
+    -webkit-transform: rotate(180deg);
+    -moz-transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+    -o-transform: rotate(180deg);
+    transform: rotate(180deg);
+}
+@media (min-width: 768px) {
+    /*成功案例*/
+    .xh-suc{
+        padding: 2rem;
+    }
+    .xh-suc-case a div.xh-suc-case-txt{
+        padding-right: 3rem;
+        margin-bottom: 1.5rem;
+        font-size: 1.5rem;
+        line-height: 3rem;
+        font-weight: 500;
+    }
+    .xh-suc-case .xh-suc-case-plus{
+        width: 3rem;
+        height: 3em;
+    }
+}
+@media (min-width: 992px) {
+    /*成功案例*/
+    .xh-suc{
+        padding: 3rem;
+    }
+    .xh-suc-case a div.xh-suc-case-txt{
+        padding-right: 4rem;
+        margin-bottom: 2rem;
+        font-size: 1.8rem;
+        line-height: 3rem;
+    }
+    .xh-suc-case .xh-suc-case-plus{
+        width: 4rem;
+        height: 4rem;
+    }
+}
+
+/* ==========================================================================
+   Component:鑫昊首页 >= 最新资讯 latestnews .xh-lstnews
+ ============================================================================ */
+.xh-lstnews{
+
+}
+.xh-lstnews .xh-lstnews-listgroup {
+    text-align: left;
+}
+.xh-lstnews .xh-lstnews-listgroup .list-group-item{
+    padding: 10px;
+}
+.xh-lstnews .xh-lstnews-listgroup .list-group-item:first-child,
+.xh-lstnews .xh-lstnews-listgroup .list-group-item:last-child{
+    border-radius: 0;
+}
+.xh-lstnews .xh-lstnews-listgroup .list-group-item .pull-left{
+    width: 30%;
+}
+.xh-lstnews .xh-lstnews-listgroup .list-group-item .pull-right{
+    width: 70%;
+}
+@media (min-width: 768px) {
+    .xh-lstnews .xh-lstnews-listgroup .list-group-item .pull-left{
+        width: 25%;
+    }
+    .xh-lstnews .xh-lstnews-listgroup .list-group-item .pull-right{
+        width: 75%;
+    }
+}
+
+@media (min-width: 1200px) {
+    .xh-lstnews .xh-lstnews-listgroup .list-group-item .pull-left{
+        width: 20%;
+    }
+    .xh-lstnews .xh-lstnews-listgroup .list-group-item .pull-right{
+        width: 80%;
+    }
+}
+.xh-lstnews .xh-lstnews-listgroup .list-group-item-image{
+    width: 100%;
+    height: auto;
+}
+.xh-lstnews .xh-lstnews-listgroup .list-group-item-heading,
+.xh-lstnews .xh-lstnews-listgroup .list-group-item-text{
+    padding-left: 1em;
+}
+/*新闻右侧配图*/
+.xh-lstnews .xh-lstnews-image{
+    display: none;
+    /*禁止选中图片*/
+    -webkit-user-select:none;
+    -moz-user-select:none;
+    -ms-user-select:none;
+    user-select:none;
+}
+@media (min-width: 768px) {
+    .xh-lstnews .xh-lstnews-image{
+        display: block;
+        padding: 10px 30px;
+    }
+    .xh-lstnews .xh-lstnews-image img{
+        width: 100%;
+        height: auto;
+    }
+}
+@media (min-width: 992px) {
+    .xh-lstnews .xh-lstnews-image{
+        padding: 10px 50px;
+    }
+}
+@media (min-width: 1200px) {
+    .xh-lstnews .xh-lstnews-image{
+        padding: 10px 80px;
+    }
+}
+
+/* ==========================================================================
+   Component:底部栏
+ ============================================================================ */
+
+.xh-bottom{
+    width: 100%;
+    height: auto;
+    margin: 0;
+    padding-top: 35px;
+    overflow: hidden;
+    color: #ffffff;
+    background-color: #1B2C57;
+    text-align: center;
+    font-family: "microsoft yahei", Arial, sans-serif;
+}
+
+.xh-logo-bottom{
+    margin-bottom: 10px;
+}
+.xh-logo-bottom img{
+    width: 170px;
+    height: auto;
+}
+
+.xh-nav-bottom{
+    margin: 0 auto 10px;
+    width: 300px;
+}
+.xh-nav-bottom ul{
+    float: left;
+}
+.xh-nav-bottom ul:first-child{
+    padding-left: 20px;
+}
+.xh-nav-bottom li{
+    list-style-type: none;
+    line-height: 1.8em;
+}
+.xh-nav-bottom li a{
+    color: #ffffff;
+    text-decoration: none;
+}
+.xh-nav-bottom li a:hover{
+    color: #999999;
+}
+
+.xh-icon-bottom{
+    margin: 0 auto;
+    width: 110px;
+}
+.xh-icon-bottom-left{
+    float: right;
+}
+.xh-icon-bottom-right{
+    float: right;
+}
+.xh-websiteinfo{
+    background-color: #000000;
+    color: #999999;
+    margin-top: 35px;
+    padding: 10px 0;
+}
+@media (min-width: 768px) {
+    .xh-bottom{
+        padding-top: 65px;
+        text-align: left;
+    }
+    .xh-logo-bottom img{
+        width: 170px;
+        height: auto;
+    }
+    .xh-nav-bottom{
+        margin: 0 0 10px;
+    }
+    .xh-icon-bottom{
+        padding-right: 30px;
+        text-align: right;
+        margin: 0;
+        width: auto;
+    }
+    .xh-websiteinfo{
+        padding: 10px 0;
+        margin-top: 65px;
+    }
+}
+@media (min-width: 992px) {
+    .xh-icon-bottom{
+        padding-right: 100px;
+    }
+    .xh-logo-bottom img{
+        width: 200px;
+        height: auto;
+    }
+}
+@media (min-width: 1200px) {
+    .xh-bottom{
+        margin: 65px auto 0;
+    }
+    .xh-icon-bottom{
+        padding-right: 120px;
+    }
+}
+
+
+
+/* ==========================================================================
+   Component:内页 banner
+ ============================================================================ */
+.public-banner{
+    position: relative;
+    width: 100%;
+    height: auto;
+    margin: 0 auto;
+    overflow: hidden;
+}
+.public-banner img{
+    width: 100%;
+    height: auto;
+    text-align: center;
+}
+.public-banner-content{
+    z-index: 10;
+    position: absolute;
+    top: 16%;
+    left: 12.5%;
+    font-family: 'Microsoft YaHei','Heiti SC',sans-serif;
+    line-height: normal;
+}
+.public-banner-content h1{
+    font-weight: bold;
+    font-size: 3rem;
+    color: #ffffff;
+}
+.public-banner-content p{
+    font-weight: bold;
+    font-size: 2.5rem;
+}
+@media (min-width: 768px)  {
+    .public-banner-content h1{
+        font-size: 5rem;
+    }
+    .public-banner-content{
+        top: 21%;
+        left: 12.5%;
+    }
+}
+@media (min-width: 992px)  {
+    .public-banner-content h1{
+        font-size: 6rem;
+    }
+    .public-banner-content{
+        top: 23%;
+        left: 12.5%;
+    }
+}
+@media (min-width: 1200px) {
+    .public-banner {
+        max-width: 1440px;
+        max-height: 240px;
+    }
+}
+/* ==========================================================================
+   Component:内页 通用页头
+ ============================================================================ */
+.public-item-header{
+    border-bottom: 1px solid #dddddd;
+    margin: 25px 0 20px;
+}
+.public-item-header h1{
+    margin: 0 auto;
+    font-family:"microsoft yahei";
+    color: #0054A4;
+    font-weight: bold;
+    font-size: 2.5rem;
+    padding-left: 10px;
+}
+@media (min-width: 768px){
+    .public-item-header{
+        margin: 30px 0 20px;
+    }
+    .public-item-header h1{
+        max-width: 750px;
+        font-size: 3rem;
+        padding-left: 0;
+    }
+}
+@media (min-width: 992px){
+    .public-item-header{
+        margin: 40px 0 20px;
+    }
+    .public-item-header h1{
+        max-width: 970px;
+        font-size: 3.5rem;
+    }
+}
+@media (min-width: 1200px) {
+    .public-item-header h1{
+        max-width: 1170px;
+    }
+}
+
+/* ==========================================================================
+   Component:内页 选项卡样式 (产品展示、成功案例)
+ ============================================================================ */
+/*-----nav修改-----*/
+.edit-nav-tabs {
+    border-bottom: none;
+    font-family: "microsoft yahei", Arial, sans-serif;
+}
+.edit-nav-tabs>li{
+    margin:0 1em 1em 0;
+}
+.edit-nav-tabs>li.active>a, .edit-nav-tabs>li.active>a:focus, .edit-nav-tabs>li.active>a:hover {
+    background-color: #0054A5;
+    color: #ffffff;
+    border: none;
+    cursor: pointer;
+}
+.edit-nav-tabs>li>a {
+    border: none;
+    border-radius: 0;
+    color: #ffffff;
+    background-color: #59595B;
+    padding: 7px 30px;
+}
+.edit-nav-tabs>li>a:hover{
+    background-color: #0054A5;
+}
+/*------内容修改-----*/
+.edit-tab-content{
+    margin: 15px 0 30px;
+    font-family: "microsoft yahei", Arial, sans-serif;
+}
+.edit-thumbnail{
+    border: 1px dashed #dddddd;
+    border-radius: 0;
+}
+.edit-thumbnail>img{
+    width: 100%;
+}
+.edit-thumbnail h3{
+    margin: 0;
+    width: 100%;
+    height: 1.8rem;
+    line-height: 1.8rem;
+    overflow: hidden;
+}
+.edit-thumbnail h3 a{
+    font-size: 1.5rem;
+    color: #59595B;
+    text-decoration: none;
+}
+.edit-thumbnail h3 a:hover{
+    color: #0054A5;
+}
+@media (min-width: 768px) {
+    .edit-thumbnail h3{
+        height: 2rem;
+        line-height: 2rem;
+    }
+    .edit-tab-content{
+        margin: 30px 0 30px;
+    }
+    .edit-thumbnail h3 a{
+        font-size: 1.8rem;
+    }
+}
+
+
+/* ==========================================================================
+   Component:最新资讯 新闻列表样式
+ ============================================================================ */
+.xh-news{
+    margin: 0 auto 50px;
+    padding: 0;
+    font-family: "microsoft yahei", Arial, sans-serif;
+}
+.xh-news-item{
+    border-bottom: 1px dashed #dddddd;
+    padding: 15px;
+    font-size: 1.5rem;
+}
+.xh-news-img{
+    float: left;
+    padding-right: 15px;
+}
+.xh-news-img img{
+    max-width: 90px;
+    height: auto;
+}
+.xh-news-title{
+    height: 2rem;
+    line-height: 2rem;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+.xh-news-title a{
+    font-size: 1.5rem;
+    color: #59595B;
+    margin: 0;
+}
+.xh-news-title a:hover{
+    color: #0054A5;
+    text-decoration: underline;
+}
+.xh-news-time{
+    color: #999999;
+}
+@media (min-width: 768px)  {
+    .xh-news-img img{
+        max-width: 100px;
+        height: auto;
+    }
+    .xh-news-title{
+        width: 60%;
+        float: left;
+    }
+    .xh-news-time{
+        float: right;
+        text-align: right;
+    }
+}
+@media (min-width: 992px)  {
+    .xh-news-img img{
+        max-width: 120px;
+    }
+    .xh-news-time{
+        line-height: 2rem;
+    }
+}
+@media (min-width: 1200px) {
+    .xh-news-img img {
+        max-width: 140px;
+    }
+    .xh-news-title a {
+        font-size: 1.6rem;
+    }
+    .xh-news-time {
+        font-size: 1.6rem;
+    }
+}
+
+
+/* ==========================================================================
+   Component:人才招聘 鑫昊蓝按钮 btn-xhBlue
+ ============================================================================ */
+.btn-xhBlue {
+    color: #fff;
+    background-color: #0051a0;
+    border-color: #004890;
+    border-radius: 0;
+}
+.btn-xhBlue:focus,
+.btn-xhBlue.focus {
+    color: #fff;
+    background-color: #003367;
+    border-color: #004182;
+}
+.btn-xhBlue:hover {
+    color: #fff;
+    background-color: #003367;
+    border-color: #002850;
+}
+.btn-xhBlue:active,
+.btn-xhBlue.active,
+.open > .dropdown-toggle.btn-xhBlue {
+    color: #fff;
+    background-color: #286090;
+    border-color: #204d74;
+}
+.btn-xhBlue:active:hover,
+.btn-xhBlue.active:hover,
+.open > .dropdown-toggle.btn-xhBlue:hover,
+.btn-xhBlue:active:focus,
+.btn-xhBlue.active:focus,
+.open > .dropdown-toggle.btn-xhBlue:focus,
+.btn-xhBlue:active.focus,
+.btn-xhBlue.active.focus,
+.open > .dropdown-toggle.btn-xhBlue.focus {
+    color: #fff;
+    background-color: #204d74;
+    border-color: #122b40;
+}
+.btn-xhBlue:active,
+.btn-xhBlue.active,
+.open > .dropdown-toggle.btn-xhBlue {
+    background-image: none;
+}
+.btn-xhBlue.disabled,
+.btn-xhBlue[disabled],
+fieldset[disabled] .btn-xhBlue,
+.btn-xhBlue.disabled:hover,
+.btn-xhBlue[disabled]:hover,
+fieldset[disabled] .btn-xhBlue:hover,
+.btn-xhBlue.disabled:focus,
+.btn-xhBlue[disabled]:focus,
+fieldset[disabled] .btn-xhBlue:focus,
+.btn-xhBlue.disabled.focus,
+.btn-xhBlue[disabled].focus,
+fieldset[disabled] .btn-xhBlue.focus,
+.btn-xhBlue.disabled:active,
+.btn-xhBlue[disabled]:active,
+fieldset[disabled] .btn-xhBlue:active,
+.btn-xhBlue.disabled.active,
+.btn-xhBlue[disabled].active,
+fieldset[disabled] .btn-xhBlue.active {
+    background-color: #337ab7;
+    border-color: #2e6da4;
+}
+.btn-xhBlue .badge {
+    color: #337ab7;
+    background-color: #fff;
+}
+
+/* ==========================================================================
+   Component:人才招聘
+ ============================================================================ */
+
+.xh-job{
+    font-family: "microsoft yahei", Arial, sans-serif;
+}
+.xh-job-head{
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    border-bottom: 1px solid #dedede;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+}
+.xh-job-head dl{
+    width: 100%;
+    overflow: hidden;
+    margin: 0;
+    padding: 6px 1em;
+}
+.xh-job-head dl dt,
+.xh-job-head dl dd{
+    float: left;
+    font-size: 14px;
+    font-weight: bold;
+}
+.xh-job-head dl dd{
+    color: red;
+}
+
+.xh-job-apply{
+    position: absolute;
+    top:0;
+    right: 1em;
+}
+.xh-job-body{
+
+}
+.xh-job-body dl{
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    margin: 0;
+    padding: 6px 1em;
+}
+.xh-job-body dl dt,
+.xh-job-body dl dd{
+    font-size: 14px;
+    font-weight:normal;
+}
+.xh-job-body dl dt{
+    width: 5em;
+    position: absolute;
+    top: 4px;
+    left: 1em;
+}
+.xh-job-body dl dd{
+    padding-left: 6em;
+}
+.xh-job .table{
+    margin-bottom: 0;
+    border: 3px solid #ddd;
+}
+@media (min-width: 768px) {
+    .xh-job-head dl dt,
+    .xh-job-head dl dd{
+        font-size: 18px;
+    }
+    .xh-job-body dl dt,
+    .xh-job-body dl dd{
+        font-size: 18px;
+    }
+    .xh-job .table{
+        border: 1px solid #ddd;
+    }
+}
+
+
+/* ==========================================================================
+   Component:关于我们
+ ============================================================================ */
+.xh-AboutIntro{
+    line-height: 2em;
+    font-family: "microsoft yahei", Arial, sans-serif;
+}
+
+/*----留言----*/
+.xh-message{
+    margin: 30px 0 50px ;
+}
+.xh-message .xh-message-item{
+    min-height: 50px;
+    border: 1px #ddd solid;
+    border-radius: 5px;
+    padding: 5px;
+}
+.xh-message-item .visitname{
+    font-size: 1em;
+}
+.xh-message-item .red{
+    color: #ff1100;
+}
+.xh-message-item .gray-date{
+    color: #999999;
+    margin-left: 10px;
+}
+.xh-message-item .green{
+    color: #039903;
+}
+.xh-message .xh-message-img{
+    width: 50px;
+    height: 50px;
+}
+
+/* ==========================================================================
+   Component:百度地图 样式修正
+ ============================================================================ */
+
+#dituContent *{
+    box-sizing: content-box;
+}
+#dituContent{
+    max-width: 1170px;
+    height: 550px;
+    margin:0 auto -450px;
+    visibility:hidden;
+}
+#dituContent label {
+    max-width: none;
+}
+
+/* ==========================================================================
+   Component:详情页
+ ============================================================================ */
+.xh-details{
+    padding: 0 1em 3em;
+    font-family: "microsoft yahei", Arial, sans-serif;
+}
+.xh-details h3{
+    font-size: 1.5em;
+    font-weight: bold;
+    text-align:center;
+}
+.xh-details .xh-date{
+    color: #999999;
+    text-align: center;
+    padding: 5px 0 2em 0;
+}
+@media (min-width: 768px) {
+    .xh-details{
+        padding: 0 3em 3em;
+    }
+    .xh-details h3{
+        font-size: 2em;
+    }
+    .xh-details .xh-date{
+        padding: 5px 0 3em 0;
+    }
+}
+
+/* ==========================================================================
+   Component:bs栅格优化 参考等分网格系统
+ ============================================================================ */
+/*----备注：[.col-xs-*:nth-of-type]--解决格栅系统--产品列表图片高度不同导致布局错乱问题----*/
+.col-xs-6:nth-of-type(2n+1){
+    clear: both;
+}
+@media (min-width: 768px) {
+    .edit-thumbnail h3{
+        height: 2rem;
+        line-height: 2rem;
+    }
+    .edit-tab-content{
+        margin: 30px 0 30px;
+    }
+    .edit-thumbnail h3 a{
+        font-size: 1.8rem;
+    }
+    .col-sm-4:nth-of-type(3n+1){
+        clear: both;
+    }
+    .col-xs-6:nth-of-type(2n+1){
+        clear: none;
+    }
+}
+@media (min-width: 992px){
+    .col-md-3:nth-of-type(4n+1){
+        clear: both;
+    }
+    .col-sm-4:nth-of-type(3n+1){
+        clear: none;
+    }
+}
+@media (min-width: 1200px){
+    .col-lg-3:nth-of-type(4n+1){
+        clear: both;
+    }
+}
