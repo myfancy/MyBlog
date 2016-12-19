@@ -63,8 +63,8 @@ $(document).ready(function(){
     if(newTabObj){
         $(".public-item-header h1").html(newTabObj.html());
     }
-    //若当前标签是“联系方式”则显示地图
-    if(newTabObj&&newTabObj.html()=="联系方式"){
+    //若当前标签是“现住地址”则显示地图
+    if(newTabObj&&newTabObj.html()=="现住地址"){
         $("#dituContent").css("visibility","visible").css("margin-bottom","50px");
     }
 
@@ -77,7 +77,7 @@ $(document).ready(function(){
         // 修改副标题为新激活标签的标题
         $(".public-item-header h1").html(activeTab);
         // 若当前标签是“联系方式”则显示地图，否则隐藏
-        if(activeTab=="联系方式"){
+        if(activeTab=="现住地址"){
             $("#dituContent").css("visibility","visible").css("margin-bottom","50px");
         }else {
             $("#dituContent").css("visibility","hidden").css("margin-bottom","-450px");

@@ -53,7 +53,7 @@
 </div>
 <!--页头-->
 <div class="page-header public-item-header">
-    <h1>公司简介<!--<small>Subtext for header</small>--></h1>
+    <h1>个人简介<!--<small>Subtext for header</small>--></h1>
 </div>
 <!---->
 <div class="container">
@@ -63,13 +63,13 @@
             <a href="#introduce" aria-controls="introduce" role="tab" data-toggle="tab">个人简介</a>
         </li>
         <li role="presentation">
-            <a href="#honor" aria-controls="honor" role="tab" data-toggle="tab">资质荣誉</a>
+            <a href="#honor" aria-controls="honor" role="tab" data-toggle="tab">我的相册</a>
         </li>
         <li role="presentation">
-            <a href="#messages" aria-controls="messages" role="tab" data-toggle="tab">请您留言</a>
+            <a href="#messages" aria-controls="messages" role="tab" data-toggle="tab">留言板</a>
         </li>
         <li role="presentation">
-            <a href="#contact" aria-controls="contact" role="tab" data-toggle="tab">基本信息</a>
+            <a href="#contact" aria-controls="contact" role="tab" data-toggle="tab">现住地址</a>
         </li>
     </ul>
 
@@ -283,8 +283,8 @@
     //创建地图函数：
     function createMap(){
         var map = new BMap.Map("dituContent");//在百度地图容器中创建一个地图
-        var point = new BMap.Point(118.198642,39.830146);//定义一个中心点坐标
-        map.centerAndZoom(point,15);//设定地图的中心点和坐标并将地图显示在地图容器中
+        var point = new BMap.Point(116.51264,39.974677);//定义一个中心点坐标
+        map.centerAndZoom(point,9);//设定地图的中心点和坐标并将地图显示在地图容器中
         window.map = map;//将map变量存储在全局
     }
 
@@ -310,8 +310,8 @@
     }
 
     //标注点数组
-    var markerArr = [{title:"鑫昊钢结构彩钢加工部",content:"地址：唐山市丰润区银城铺工业园国持营村东",point:"118.200385|39.827417",isOpen:1,icon:{w:23,h:25,l:0,t:21,x:9,lb:12}}
-    ];
+    var markerArr = [{title:"坐标北京",content:"坐标北京",point:"116.37926|39.974677",isOpen:1,icon:{w:23,h:25,l:0,t:21,x:9,lb:12}}
+		 ];
     //创建marker
     function addMarker(){
         for(var i=0;i<markerArr.length;i++){
