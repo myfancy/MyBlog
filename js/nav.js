@@ -1,4 +1,7 @@
-$(document).ready(function(){
+/**
+ * 菜单相关事项，响应式代码
+ */
+$(function(){
     $(document).off('click.bs.dropdown.data-api');
     /**
      * 给菜单绑定下拉事件
@@ -54,18 +57,17 @@ function dropdownHover() {
  * 手动设置菜单来当前高亮
  * yMenuIndex下移出li的yMenua class
  * 分析url给指定li添加class yMenu
- * 本地：henghuikx/ local.html 同城配送 tuan.html 同城团购 chinafeature.html 特色中国 instalment.html 恒会分期 hbbuy.html 会饼换购
- * 外网：mall.henghuinet.com/ CityDist 同城快购 Tuan 同城团购 ChinaFeature 特色中国 Instalment 恒会分期 HbProduct 会饼兑换
  */
 
 $(function(){
-    var subName = window.location.href.split("XinHaoGangJieGou/")[1];
+    var subName = window.location.href.split("MyBlog/")[1]||window.location.href.split("github.io/")[1];
+    if(subName===undefined) console.error("subName未定义！");
     var $NavItem =  $(".nav.navbar-nav").find("li");
     switch (subName){
         case "about.html?id=introduce":
             $NavItem.removeClass("active")
                 .each(function(){
-                    if($(this).find("a").html().indexOf("公司简介") !== -1){
+                    if($(this).find("a").html().indexOf("个人简介") !== -1){
                         $(this).addClass("active");
                     }
                 });
@@ -73,31 +75,7 @@ $(function(){
         case "about.html?id=honor":
             $NavItem.removeClass("active")
                 .each(function(){
-                    if($(this).find("a").html().indexOf("资质荣誉") !== -1){
-                        $(this).addClass("active");
-                    }
-                });
-            return;
-        case "news.html":
-            $NavItem.removeClass("active")
-                .each(function(){
-                    if($(this).find("a").html().indexOf("最新资讯") !== -1){
-                        $(this).addClass("active");
-                    }
-                });
-            return;
-        case "product.html":
-            $NavItem.removeClass("active")
-                .each(function(){
-                    if($(this).find("a").html().indexOf("产品展示") !== -1){
-                        $(this).addClass("active");
-                    }
-                });
-            return;
-        case "job.html":
-            $NavItem.removeClass("active")
-                .each(function(){
-                    if($(this).find("a").html().indexOf("人才招聘") !== -1){
+                    if($(this).find("a").html().indexOf("我的相册") !== -1){
                         $(this).addClass("active");
                     }
                 });
@@ -105,7 +83,7 @@ $(function(){
         case "about.html?id=messages":
             $NavItem.removeClass("active")
                 .each(function(){
-                    if($(this).find("a").html().indexOf("请您留言") !== -1){
+                    if($(this).find("a").html().indexOf("留言板") !== -1){
                         $(this).addClass("active");
                     }
                 });
@@ -118,8 +96,32 @@ $(function(){
                     }
                 });
             return;
+        case "news.html":
+            $NavItem.removeClass("active")
+                .each(function(){
+                    if($(this).find("a").html().indexOf("最新文章") !== -1){
+                        $(this).addClass("active");
+                    }
+                });
+            return;
+        case "product.html":
+            $NavItem.removeClass("active")
+                .each(function(){
+                    if($(this).find("a").html().indexOf("参与项目") !== -1){
+                        $(this).addClass("active");
+                    }
+                });
+            return;
+        case "job.html":
+            $NavItem.removeClass("active")
+                .each(function(){
+                    if($(this).find("a").html().indexOf("工作经历") !== -1){
+                        $(this).addClass("active");
+                    }
+                });
+            return;
         default:
-            //alert(subName);
+            //console.log(subName);
             return;
     }
 });
