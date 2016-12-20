@@ -24,8 +24,9 @@
  说明1：检测页面URL，得到三种结果
  1）http://www.xxxx.com/about.html
  2）http://www.xxxx.com/about.html?id=item3
-//----------------------------已弃用，换成通常大家用的#! 3）http://www.xxxx.com/about.html[?id=item3]#item5?nojump   ([]代表可选)
+//------------------------------已弃用，换成通常大家用的#! 3）http://www.xxxx.com/about.html[?id=item3]#item5?nojump   ([]代表可选)
  3）http://www.xxxx.com/about.html[?id=tab1]#!tab2   ([]代表可选)
+
  第一种结果，是页面默认情况，自动打开第一个选项卡，不用处理，并且在正式开发中，菜单栏的链接不会这么写的
  第二种结果，是菜单栏的链接的格式。之所以不直接用#!tab1，是因为这样页面不会刷新。
     但因为菜单栏也没有关联下面的tab点击事件，所以会出现第一次点击这种链接是如个人简介（……#!introduce）时，页面刷新打开；然后再次点击，如资质荣誉(……#!introduce#!honor)时,页面会没有反应。故这里采用了(?id=)的方式传参，保证页面会刷新。
@@ -56,11 +57,13 @@ $(document).ready(function(){
     //当无 #! 但有 ?id= 时，以 ?id=tab1 为准，打开指定标签。（若两者都无，无需做任何处理，默认打开第一个标签）
 
     //用到了indexOf()和split()[]方法，忘记使用方法请自行百度
-    if (url.indexOf("#!")>0) {
-        newTabObj = xhtab.find('a[href="'+'#'+url.split('#')[1]+'"]').tab('show');
-    }else if (url.indexOf("?id=")>0) {
+    //如果有#！，以#!后面为准，打开tab，否则以?id=后面为准打开
+    if (url.indexOf("#!")!== -1) {
+        newTabObj = xhtab.find('a[href="'+'#'+url.split('#!')[1]+'"]').tab('show');
+    }else if (url.indexOf("?id=")!== -1) {
         newTabObj = xhtab.find('a[href="'+'#'+url.split('?id=')[1]+'"]').tab('show');
     }
+
     //修改副标题为新打开标签的标题
     if(newTabObj){
         $(".public-item-header h1").html(newTabObj.html());
