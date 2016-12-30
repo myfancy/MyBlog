@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="js/jquery.min.js"></script>
+    <script>
+        jQuery(document).ready(function($) {
+
+            if (window.history && window.history.pushState) {
+
+                $(window).on('popstate', function() {
+                    var hashLocation = location.hash;
+                    alert(hashLocation)
+                    var hashSplit = hashLocation.split("#!/");
+                    alert(hashSplit)
+                    var hashName = hashSplit[1];
+                    alert(hashName)
+
+                    if (hashName !== '') {
+//                        var hash = window.location.hash;
+//                        if (hash === '') {
+                            alert('後退按鈕點擊');
+//                        }
+                    }
+                });
+
+                window.history.pushState('forward', null, './#forward');
+            }
+
+        });
+    </script>
+</head>
+<body>
+
+</body>
+</html>

@@ -103,8 +103,8 @@ $(function(){
 
     //下面的方法不用了  ---但是也不是没有意义，至少锻炼了编码能力不是吗？
     //主要问题出在思维逻辑上，没有把问题简单化
-    //var subName = window.location.href.split("MyBlog/")[1]||window.location.href.split("github.io/")[1];
-    //if(subName===undefined) console.error("subName未定义！");
+    //var urlCut = window.location.href.split("MyBlog/")[1]||window.location.href.split("github.io/")[1];
+    //if(urlCut===undefined) console.error("urlCut未定义！");
     //var $NavItem =  $(".nav.navbar-nav").find("li");
 
     //定义导航菜单链接和名字信息--------如果改为自动读取对应html文件中的内容就更好了 --下面已经改好了
@@ -126,16 +126,16 @@ $(function(){
     //});
     //alert(JSON.stringify(navConfig));
 
-    //if(navConfig[subName]) {
+    //if(navConfig[urlCut]) {
     //    $NavItem.removeClass("active")
     //        .each(function () {
-    //            if ($(this).find("a").html().indexOf(navConfig[subName]) !== -1) {
+    //            if ($(this).find("a").html().indexOf(navConfig[urlCut]) !== -1) {
     //                $(this).addClass("active");
     //            }
     //        });
     //}
     //进阶优化：这种是swtich太占代码行数了，相同的代码出现了这么遍，所以将数据用json提取出来。---看上面
-    //switch (subName){
+    //switch (urlCut){
     //    case "about.html?id=introduce":
     //        $NavItem.removeClass("active")
     //            .each(function(){
@@ -193,7 +193,7 @@ $(function(){
     //            });
     //        return;
     //    default:
-    //        //console.log(subName);
+    //        //console.log(urlCut);
     //        return;
     //}
 });

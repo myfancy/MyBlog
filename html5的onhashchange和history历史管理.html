@@ -1,0 +1,41 @@
+<!DOCTYPE html PUBLIC"-//W3C//DTD XHTML 1.0 Transitional//EN""http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type"content="text/html; charset=utf-8"/>
+    <title>无标题文档</title>
+    <script type="text/javascript">
+        window.onload=function (){
+            var oInput = document.getElementById("input1");
+            oInput.onclick=function(){
+                var oDiv = document.getElementById("div1");
+                var num = generateNum (6);
+//onhashchange
+                window.location.hash = num;
+                window.onhashchange = function(){
+                    oDiv = window.location.hash.substring(1);
+                }
+//history
+                oDiv.innerHTML=num;
+//生成随机数
+                function generateNum (num){
+                    var ret = [];
+                    for (var i = 0; i < num; i++) {
+                        ret.push(Math.ceil(100*Math.random()));
+                    };
+                    return ret;
+                }
+            }
+        }
+        //实现点击后退按钮，页面跟着改变
+        //待研究
+        window.onhashchange = function(){
+            oDiv = window.location.hash.substring(1);
+        }
+    </script>
+</head>
+<body>
+中奖号码：
+<div id="div1"></div>
+<input type="button"value="生成随机号码"id="input1"/>
+</body>
+</html>
